@@ -1,0 +1,491 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class TournamentView
+    Inherits System.Windows.Forms.Form
+
+    'Formularz przesłania metodę dispose, aby wyczyścić listę składników.
+    <System.Diagnostics.DebuggerNonUserCode()>
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Wymagane przez Projektanta formularzy systemu Windows
+    Private components As System.ComponentModel.IContainer
+
+    'UWAGA: następująca procedura jest wymagana przez Projektanta formularzy systemu Windows
+    'Możesz to modyfikować, używając Projektanta formularzy systemu Windows. 
+    'Nie należy modyfikować za pomocą edytora kodu.
+    <System.Diagnostics.DebuggerStepThrough()>
+    Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label_Name = New System.Windows.Forms.Label()
+        Me.Label_Surname = New System.Windows.Forms.Label()
+        Me.Label_Type = New System.Windows.Forms.Label()
+        Me.Label_Minute = New System.Windows.Forms.Label()
+        Me.Label_Hundredth = New System.Windows.Forms.Label()
+        Me.Label_Second = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label_SecondLimit = New System.Windows.Forms.Label()
+        Me.Label_HundredthLimit = New System.Windows.Forms.Label()
+        Me.Label_MinuteLimit = New System.Windows.Forms.Label()
+        Me.Button_Discard = New System.Windows.Forms.Button()
+        Me.Button_Stop = New System.Windows.Forms.Button()
+        Me.Button_Disobedience1 = New System.Windows.Forms.Button()
+        Me.Button_DisobedienceDis1 = New System.Windows.Forms.Button()
+        Me.Button_Disobedience2 = New System.Windows.Forms.Button()
+        Me.Button_DisobedienceDis2 = New System.Windows.Forms.Button()
+        Me.Button_Disobedience3 = New System.Windows.Forms.Button()
+        Me.Button_Fall = New System.Windows.Forms.Button()
+        Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.Button_Start = New System.Windows.Forms.Button()
+        Me.Button_Next = New System.Windows.Forms.Button()
+        Me.Button_RoundStart = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label_Points = New System.Windows.Forms.Label()
+        Me.Label_Horse = New System.Windows.Forms.Label()
+        Me.Label_HitTime = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label_TimeLimit = New System.Windows.Forms.Label()
+        Me.ListBox_Fault = New System.Windows.Forms.ListBox()
+        Me.Button_FaultBack = New System.Windows.Forms.Button()
+        Me.SuspendLayout()
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(776, 564)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "Exit"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label_Name
+        '
+        Me.Label_Name.AutoSize = True
+        Me.Label_Name.Location = New System.Drawing.Point(100, 97)
+        Me.Label_Name.Name = "Label_Name"
+        Me.Label_Name.Size = New System.Drawing.Size(26, 13)
+        Me.Label_Name.TabIndex = 1
+        Me.Label_Name.Text = "Imię"
+        '
+        'Label_Surname
+        '
+        Me.Label_Surname.AutoSize = True
+        Me.Label_Surname.Location = New System.Drawing.Point(160, 97)
+        Me.Label_Surname.Name = "Label_Surname"
+        Me.Label_Surname.Size = New System.Drawing.Size(56, 13)
+        Me.Label_Surname.TabIndex = 2
+        Me.Label_Surname.Text = " Nazwisko"
+        '
+        'Label_Type
+        '
+        Me.Label_Type.AutoSize = True
+        Me.Label_Type.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label_Type.Location = New System.Drawing.Point(29, 27)
+        Me.Label_Type.Name = "Label_Type"
+        Me.Label_Type.Size = New System.Drawing.Size(57, 24)
+        Me.Label_Type.TabIndex = 3
+        Me.Label_Type.Text = "Type"
+        '
+        'Label_Minute
+        '
+        Me.Label_Minute.AutoSize = True
+        Me.Label_Minute.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label_Minute.Location = New System.Drawing.Point(100, 128)
+        Me.Label_Minute.Name = "Label_Minute"
+        Me.Label_Minute.Size = New System.Drawing.Size(30, 24)
+        Me.Label_Minute.TabIndex = 4
+        Me.Label_Minute.Text = "00"
+        '
+        'Label_Hundredth
+        '
+        Me.Label_Hundredth.AutoSize = True
+        Me.Label_Hundredth.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label_Hundredth.Location = New System.Drawing.Point(214, 128)
+        Me.Label_Hundredth.Name = "Label_Hundredth"
+        Me.Label_Hundredth.Size = New System.Drawing.Size(30, 24)
+        Me.Label_Hundredth.TabIndex = 5
+        Me.Label_Hundredth.Text = "00"
+        '
+        'Label_Second
+        '
+        Me.Label_Second.AutoSize = True
+        Me.Label_Second.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label_Second.Location = New System.Drawing.Point(157, 128)
+        Me.Label_Second.Name = "Label_Second"
+        Me.Label_Second.Size = New System.Drawing.Size(30, 24)
+        Me.Label_Second.TabIndex = 6
+        Me.Label_Second.Text = "00"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label4.Location = New System.Drawing.Point(136, 128)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(15, 24)
+        Me.Label4.TabIndex = 7
+        Me.Label4.Text = ":"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label5.Location = New System.Drawing.Point(193, 128)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(15, 24)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = ":"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(312, 97)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(103, 13)
+        Me.Label6.TabIndex = 9
+        Me.Label6.Text = "Przekroczenie limitu:"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label7.Location = New System.Drawing.Point(404, 128)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(15, 24)
+        Me.Label7.TabIndex = 14
+        Me.Label7.Text = ":"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label8.Location = New System.Drawing.Point(347, 128)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(15, 24)
+        Me.Label8.TabIndex = 13
+        Me.Label8.Text = ":"
+        '
+        'Label_SecondLimit
+        '
+        Me.Label_SecondLimit.AutoSize = True
+        Me.Label_SecondLimit.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label_SecondLimit.Location = New System.Drawing.Point(368, 128)
+        Me.Label_SecondLimit.Name = "Label_SecondLimit"
+        Me.Label_SecondLimit.Size = New System.Drawing.Size(30, 24)
+        Me.Label_SecondLimit.TabIndex = 12
+        Me.Label_SecondLimit.Text = "00"
+        '
+        'Label_HundredthLimit
+        '
+        Me.Label_HundredthLimit.AutoSize = True
+        Me.Label_HundredthLimit.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label_HundredthLimit.Location = New System.Drawing.Point(425, 128)
+        Me.Label_HundredthLimit.Name = "Label_HundredthLimit"
+        Me.Label_HundredthLimit.Size = New System.Drawing.Size(30, 24)
+        Me.Label_HundredthLimit.TabIndex = 11
+        Me.Label_HundredthLimit.Text = "00"
+        '
+        'Label_MinuteLimit
+        '
+        Me.Label_MinuteLimit.AutoSize = True
+        Me.Label_MinuteLimit.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label_MinuteLimit.Location = New System.Drawing.Point(311, 128)
+        Me.Label_MinuteLimit.Name = "Label_MinuteLimit"
+        Me.Label_MinuteLimit.Size = New System.Drawing.Size(30, 24)
+        Me.Label_MinuteLimit.TabIndex = 10
+        Me.Label_MinuteLimit.Text = "00"
+        '
+        'Button_Discard
+        '
+        Me.Button_Discard.Enabled = False
+        Me.Button_Discard.Location = New System.Drawing.Point(135, 215)
+        Me.Button_Discard.Name = "Button_Discard"
+        Me.Button_Discard.Size = New System.Drawing.Size(108, 106)
+        Me.Button_Discard.TabIndex = 15
+        Me.Button_Discard.Text = "Zrzutka"
+        Me.Button_Discard.UseVisualStyleBackColor = True
+        '
+        'Button_Stop
+        '
+        Me.Button_Stop.Enabled = False
+        Me.Button_Stop.Location = New System.Drawing.Point(135, 321)
+        Me.Button_Stop.Name = "Button_Stop"
+        Me.Button_Stop.Size = New System.Drawing.Size(108, 106)
+        Me.Button_Stop.TabIndex = 16
+        Me.Button_Stop.Text = "Zatrzymanie," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Przejącie do stępa," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Przejście z galopu do kłusa na wiecej niż 3 kr" &
+    "oki"
+        Me.Button_Stop.UseVisualStyleBackColor = True
+        '
+        'Button_Disobedience1
+        '
+        Me.Button_Disobedience1.Enabled = False
+        Me.Button_Disobedience1.Location = New System.Drawing.Point(244, 215)
+        Me.Button_Disobedience1.Name = "Button_Disobedience1"
+        Me.Button_Disobedience1.Size = New System.Drawing.Size(108, 106)
+        Me.Button_Disobedience1.TabIndex = 17
+        Me.Button_Disobedience1.Text = "Pierwsze nieposłuszeństwo"
+        Me.Button_Disobedience1.UseVisualStyleBackColor = True
+        '
+        'Button_DisobedienceDis1
+        '
+        Me.Button_DisobedienceDis1.Enabled = False
+        Me.Button_DisobedienceDis1.Location = New System.Drawing.Point(244, 321)
+        Me.Button_DisobedienceDis1.Name = "Button_DisobedienceDis1"
+        Me.Button_DisobedienceDis1.Size = New System.Drawing.Size(108, 106)
+        Me.Button_DisobedienceDis1.TabIndex = 18
+        Me.Button_DisobedienceDis1.Text = "Pierwsze nieposłuszeństwo z rozbudową przeskody"
+        Me.Button_DisobedienceDis1.UseVisualStyleBackColor = True
+        '
+        'Button_Disobedience2
+        '
+        Me.Button_Disobedience2.Enabled = False
+        Me.Button_Disobedience2.Location = New System.Drawing.Point(352, 215)
+        Me.Button_Disobedience2.Name = "Button_Disobedience2"
+        Me.Button_Disobedience2.Size = New System.Drawing.Size(108, 106)
+        Me.Button_Disobedience2.TabIndex = 19
+        Me.Button_Disobedience2.Text = "Drugie nieposłuszeństwo"
+        Me.Button_Disobedience2.UseVisualStyleBackColor = True
+        '
+        'Button_DisobedienceDis2
+        '
+        Me.Button_DisobedienceDis2.Enabled = False
+        Me.Button_DisobedienceDis2.Location = New System.Drawing.Point(352, 321)
+        Me.Button_DisobedienceDis2.Name = "Button_DisobedienceDis2"
+        Me.Button_DisobedienceDis2.Size = New System.Drawing.Size(108, 106)
+        Me.Button_DisobedienceDis2.TabIndex = 20
+        Me.Button_DisobedienceDis2.Text = "Drugie nieposłuszeństwo z rozbudową przeskody"
+        Me.Button_DisobedienceDis2.UseVisualStyleBackColor = True
+        '
+        'Button_Disobedience3
+        '
+        Me.Button_Disobedience3.Enabled = False
+        Me.Button_Disobedience3.Location = New System.Drawing.Point(461, 215)
+        Me.Button_Disobedience3.Name = "Button_Disobedience3"
+        Me.Button_Disobedience3.Size = New System.Drawing.Size(108, 106)
+        Me.Button_Disobedience3.TabIndex = 21
+        Me.Button_Disobedience3.Text = "Trzecie nieposłuszeństwo"
+        Me.Button_Disobedience3.UseVisualStyleBackColor = True
+        '
+        'Button_Fall
+        '
+        Me.Button_Fall.Enabled = False
+        Me.Button_Fall.Location = New System.Drawing.Point(461, 321)
+        Me.Button_Fall.Name = "Button_Fall"
+        Me.Button_Fall.Size = New System.Drawing.Size(108, 106)
+        Me.Button_Fall.TabIndex = 22
+        Me.Button_Fall.Text = "Upadek"
+        Me.Button_Fall.UseVisualStyleBackColor = True
+        '
+        'SerialPort1
+        '
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 7
+        '
+        'Timer2
+        '
+        Me.Timer2.Interval = 10
+        '
+        'Button_Start
+        '
+        Me.Button_Start.Enabled = False
+        Me.Button_Start.Location = New System.Drawing.Point(294, 485)
+        Me.Button_Start.Name = "Button_Start"
+        Me.Button_Start.Size = New System.Drawing.Size(129, 41)
+        Me.Button_Start.TabIndex = 23
+        Me.Button_Start.Text = "Start"
+        Me.Button_Start.UseVisualStyleBackColor = True
+        '
+        'Button_Next
+        '
+        Me.Button_Next.Enabled = False
+        Me.Button_Next.Location = New System.Drawing.Point(488, 485)
+        Me.Button_Next.Name = "Button_Next"
+        Me.Button_Next.Size = New System.Drawing.Size(81, 41)
+        Me.Button_Next.TabIndex = 24
+        Me.Button_Next.Text = "Następny"
+        Me.Button_Next.UseVisualStyleBackColor = True
+        '
+        'Button_RoundStart
+        '
+        Me.Button_RoundStart.Location = New System.Drawing.Point(135, 485)
+        Me.Button_RoundStart.Name = "Button_RoundStart"
+        Me.Button_RoundStart.Size = New System.Drawing.Size(81, 41)
+        Me.Button_RoundStart.TabIndex = 25
+        Me.Button_RoundStart.Text = "Start Rundy"
+        Me.Button_RoundStart.UseVisualStyleBackColor = True
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(513, 101)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(40, 13)
+        Me.Label12.TabIndex = 26
+        Me.Label12.Text = "Punkty"
+        '
+        'Label_Points
+        '
+        Me.Label_Points.AutoSize = True
+        Me.Label_Points.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label_Points.Location = New System.Drawing.Point(524, 131)
+        Me.Label_Points.Name = "Label_Points"
+        Me.Label_Points.Size = New System.Drawing.Size(18, 20)
+        Me.Label_Points.TabIndex = 27
+        Me.Label_Points.Text = "0"
+        '
+        'Label_Horse
+        '
+        Me.Label_Horse.AutoSize = True
+        Me.Label_Horse.Location = New System.Drawing.Point(241, 97)
+        Me.Label_Horse.Name = "Label_Horse"
+        Me.Label_Horse.Size = New System.Drawing.Size(26, 13)
+        Me.Label_Horse.TabIndex = 28
+        Me.Label_Horse.Text = "Koń"
+        '
+        'Label_HitTime
+        '
+        Me.Label_HitTime.AutoSize = True
+        Me.Label_HitTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label_HitTime.Location = New System.Drawing.Point(100, 27)
+        Me.Label_HitTime.Name = "Label_HitTime"
+        Me.Label_HitTime.Size = New System.Drawing.Size(0, 24)
+        Me.Label_HitTime.TabIndex = 29
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label1.Location = New System.Drawing.Point(404, 27)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(119, 24)
+        Me.Label1.TabIndex = 30
+        Me.Label1.Text = "Limit czasu:"
+        '
+        'Label_TimeLimit
+        '
+        Me.Label_TimeLimit.AutoSize = True
+        Me.Label_TimeLimit.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label_TimeLimit.Location = New System.Drawing.Point(521, 27)
+        Me.Label_TimeLimit.Name = "Label_TimeLimit"
+        Me.Label_TimeLimit.Size = New System.Drawing.Size(21, 24)
+        Me.Label_TimeLimit.TabIndex = 31
+        Me.Label_TimeLimit.Text = "0"
+        '
+        'ListBox_Fault
+        '
+        Me.ListBox_Fault.FormattingEnabled = True
+        Me.ListBox_Fault.Items.AddRange(New Object() {"Błędy:"})
+        Me.ListBox_Fault.Location = New System.Drawing.Point(629, 150)
+        Me.ListBox_Fault.Name = "ListBox_Fault"
+        Me.ListBox_Fault.Size = New System.Drawing.Size(222, 277)
+        Me.ListBox_Fault.TabIndex = 32
+        '
+        'Button_FaultBack
+        '
+        Me.Button_FaultBack.Location = New System.Drawing.Point(757, 114)
+        Me.Button_FaultBack.Name = "Button_FaultBack"
+        Me.Button_FaultBack.Size = New System.Drawing.Size(94, 30)
+        Me.Button_FaultBack.TabIndex = 33
+        Me.Button_FaultBack.Text = "Cofnij Błąd"
+        Me.Button_FaultBack.UseVisualStyleBackColor = True
+        '
+        'TournamentView
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(884, 611)
+        Me.Controls.Add(Me.Button_FaultBack)
+        Me.Controls.Add(Me.ListBox_Fault)
+        Me.Controls.Add(Me.Label_TimeLimit)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Label_HitTime)
+        Me.Controls.Add(Me.Label_Horse)
+        Me.Controls.Add(Me.Label_Points)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.Button_RoundStart)
+        Me.Controls.Add(Me.Button_Next)
+        Me.Controls.Add(Me.Button_Start)
+        Me.Controls.Add(Me.Button_Fall)
+        Me.Controls.Add(Me.Button_Disobedience3)
+        Me.Controls.Add(Me.Button_DisobedienceDis2)
+        Me.Controls.Add(Me.Button_Disobedience2)
+        Me.Controls.Add(Me.Button_DisobedienceDis1)
+        Me.Controls.Add(Me.Button_Disobedience1)
+        Me.Controls.Add(Me.Button_Stop)
+        Me.Controls.Add(Me.Button_Discard)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Label_SecondLimit)
+        Me.Controls.Add(Me.Label_HundredthLimit)
+        Me.Controls.Add(Me.Label_MinuteLimit)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label_Second)
+        Me.Controls.Add(Me.Label_Hundredth)
+        Me.Controls.Add(Me.Label_Minute)
+        Me.Controls.Add(Me.Label_Type)
+        Me.Controls.Add(Me.Label_Surname)
+        Me.Controls.Add(Me.Label_Name)
+        Me.Controls.Add(Me.Button1)
+        Me.Name = "TournamentView"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Project"
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
+    End Sub
+
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Label_Name As Label
+    Friend WithEvents Label_Surname As Label
+    Friend WithEvents Label_Type As Label
+    Friend WithEvents Label_Minute As Label
+    Friend WithEvents Label_Hundredth As Label
+    Friend WithEvents Label_Second As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label_SecondLimit As Label
+    Friend WithEvents Label_HundredthLimit As Label
+    Friend WithEvents Label_MinuteLimit As Label
+    Friend WithEvents Button_Discard As Button
+    Friend WithEvents Button_Stop As Button
+    Friend WithEvents Button_Disobedience1 As Button
+    Friend WithEvents Button_DisobedienceDis1 As Button
+    Friend WithEvents Button_Disobedience2 As Button
+    Friend WithEvents Button_DisobedienceDis2 As Button
+    Friend WithEvents Button_Disobedience3 As Button
+    Friend WithEvents Button_Fall As Button
+    Friend WithEvents SerialPort1 As IO.Ports.SerialPort
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents Timer2 As Timer
+    Friend WithEvents Button_Start As Button
+    Friend WithEvents Button_Next As Button
+    Friend WithEvents Button_RoundStart As Button
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label_Points As Label
+    Friend WithEvents Label_Horse As Label
+    Friend WithEvents Label_HitTime As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label_TimeLimit As Label
+    Friend WithEvents ListBox_Fault As ListBox
+    Friend WithEvents Button_FaultBack As Button
+End Class

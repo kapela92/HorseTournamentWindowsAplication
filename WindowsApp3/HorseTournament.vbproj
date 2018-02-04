@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B9C01E2E-D6B9-4CBF-89A6-73D0E0A324FB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>HorseTournament.My.MyApplication</StartupObject>
+    <RootNamespace>HorseTournament</RootNamespace>
+    <AssemblyName>HorseTournament</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>HorseTournament.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>HorseTournament.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>horse.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.10.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\MySQL\MySQL Connector Net 6.10.4\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Web, Version=6.10.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\MySQL\MySQL Connector Net 6.10.4\Assemblies\v4.5.2\MySql.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddHorseToDatabaseView.Designer.vb">
+      <DependentUpon>AddHorseToDatabaseView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddHorseToDatabaseView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfigurationView.Designer.vb">
+      <DependentUpon>ConfigurationView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurationView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectionTestView.Designer.vb">
+      <DependentUpon>ConnectionTestView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectionTestView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPlayerView.Designer.vb">
+      <DependentUpon>AddPlayerView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddPlayerView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPlayerToDatabaseView.Designer.vb">
+      <DependentUpon>AddPlayerToDatabaseView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddPlayerToDatabaseView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditHorseView.Designer.vb">
+      <DependentUpon>EditHorseView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditHorseView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPlayerView.Designer.vb">
+      <DependentUpon>EditPlayerView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditPlayerView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultsView.Designer.vb">
+      <DependentUpon>ResultsView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ResultsView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartingDataView.Designer.vb">
+      <DependentUpon>StartingDataView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StartingDataView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartView.Designer.vb">
+      <DependentUpon>StartView.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TournamentView.Designer.vb">
+      <DependentUpon>TournamentView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TournamentView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="TrainingView.Designer.vb">
+      <DependentUpon>TrainingView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AddHorseToDatabaseView.resx">
+      <DependentUpon>AddHorseToDatabaseView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPlayerToDatabaseView.resx">
+      <DependentUpon>AddPlayerToDatabaseView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigurationView.resx">
+      <DependentUpon>ConfigurationView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConnectionTestView.resx">
+      <DependentUpon>ConnectionTestView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPlayerView.resx">
+      <DependentUpon>AddPlayerView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditHorseView.resx">
+      <DependentUpon>EditHorseView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditPlayerView.resx">
+      <DependentUpon>EditPlayerView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultsView.resx">
+      <DependentUpon>ResultsView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartingDataView.resx">
+      <DependentUpon>StartingDataView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartView.resx">
+      <DependentUpon>StartView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TournamentView.resx">
+      <DependentUpon>TournamentView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrainingView.resx">
+      <DependentUpon>TrainingView.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="horse.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
