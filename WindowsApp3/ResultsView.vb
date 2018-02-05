@@ -104,4 +104,7 @@ Public Class ResultsView
         Next
     End Sub
 
+    Private Sub ButtonX_Click(sender As Object, e As EventArgs) Handles ButtonX.Click
+        Application.Exit()
+    End Sub
 End Class

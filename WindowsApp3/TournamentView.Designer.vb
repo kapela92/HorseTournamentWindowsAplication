@@ -23,6 +23,7 @@ Partial Class TournamentView
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TournamentView))
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label_Name = New System.Windows.Forms.Label()
         Me.Label_Surname = New System.Windows.Forms.Label()
@@ -60,42 +61,53 @@ Partial Class TournamentView
         Me.Label_TimeLimit = New System.Windows.Forms.Label()
         Me.ListBox_Fault = New System.Windows.Forms.ListBox()
         Me.Button_FaultBack = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ButtonX = New System.Windows.Forms.Button()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(776, 564)
+        Me.Button1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(776, 558)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(75, 30)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Exit"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Label_Name
         '
         Me.Label_Name.AutoSize = True
-        Me.Label_Name.Location = New System.Drawing.Point(100, 97)
+        Me.Label_Name.Font = New System.Drawing.Font("Monotype Corsiva", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label_Name.Location = New System.Drawing.Point(41, 97)
         Me.Label_Name.Name = "Label_Name"
-        Me.Label_Name.Size = New System.Drawing.Size(26, 13)
+        Me.Label_Name.Size = New System.Drawing.Size(45, 25)
         Me.Label_Name.TabIndex = 1
         Me.Label_Name.Text = "Imię"
         '
         'Label_Surname
         '
         Me.Label_Surname.AutoSize = True
-        Me.Label_Surname.Location = New System.Drawing.Point(160, 97)
+        Me.Label_Surname.Font = New System.Drawing.Font("Monotype Corsiva", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label_Surname.Location = New System.Drawing.Point(115, 97)
         Me.Label_Surname.Name = "Label_Surname"
-        Me.Label_Surname.Size = New System.Drawing.Size(56, 13)
+        Me.Label_Surname.Size = New System.Drawing.Size(93, 25)
         Me.Label_Surname.TabIndex = 2
         Me.Label_Surname.Text = " Nazwisko"
         '
         'Label_Type
         '
         Me.Label_Type.AutoSize = True
-        Me.Label_Type.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Label_Type.Location = New System.Drawing.Point(29, 27)
+        Me.Label_Type.Font = New System.Drawing.Font("Monotype Corsiva", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label_Type.ForeColor = System.Drawing.Color.White
+        Me.Label_Type.Location = New System.Drawing.Point(143, 12)
         Me.Label_Type.Name = "Label_Type"
-        Me.Label_Type.Size = New System.Drawing.Size(57, 24)
+        Me.Label_Type.Size = New System.Drawing.Size(65, 33)
         Me.Label_Type.TabIndex = 3
         Me.Label_Type.Text = "Type"
         '
@@ -154,7 +166,7 @@ Partial Class TournamentView
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(312, 97)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(103, 13)
+        Me.Label6.Size = New System.Drawing.Size(163, 21)
         Me.Label6.TabIndex = 9
         Me.Label6.Text = "Przekroczenie limitu:"
         '
@@ -210,84 +222,116 @@ Partial Class TournamentView
         '
         'Button_Discard
         '
+        Me.Button_Discard.BackColor = System.Drawing.Color.SlateGray
         Me.Button_Discard.Enabled = False
-        Me.Button_Discard.Location = New System.Drawing.Point(135, 215)
+        Me.Button_Discard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_Discard.Font = New System.Drawing.Font("Century Gothic", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Button_Discard.ForeColor = System.Drawing.Color.White
+        Me.Button_Discard.Location = New System.Drawing.Point(36, 181)
         Me.Button_Discard.Name = "Button_Discard"
-        Me.Button_Discard.Size = New System.Drawing.Size(108, 106)
+        Me.Button_Discard.Size = New System.Drawing.Size(140, 120)
         Me.Button_Discard.TabIndex = 15
         Me.Button_Discard.Text = "Zrzutka"
-        Me.Button_Discard.UseVisualStyleBackColor = True
+        Me.Button_Discard.UseVisualStyleBackColor = False
         '
         'Button_Stop
         '
+        Me.Button_Stop.BackColor = System.Drawing.Color.DarkOliveGreen
         Me.Button_Stop.Enabled = False
-        Me.Button_Stop.Location = New System.Drawing.Point(135, 321)
+        Me.Button_Stop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_Stop.Font = New System.Drawing.Font("Century Gothic", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Button_Stop.ForeColor = System.Drawing.Color.White
+        Me.Button_Stop.Location = New System.Drawing.Point(36, 307)
         Me.Button_Stop.Name = "Button_Stop"
-        Me.Button_Stop.Size = New System.Drawing.Size(108, 106)
+        Me.Button_Stop.Size = New System.Drawing.Size(140, 120)
         Me.Button_Stop.TabIndex = 16
         Me.Button_Stop.Text = "Zatrzymanie," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Przejącie do stępa," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Przejście z galopu do kłusa na wiecej niż 3 kr" &
     "oki"
-        Me.Button_Stop.UseVisualStyleBackColor = True
+        Me.Button_Stop.UseVisualStyleBackColor = False
         '
         'Button_Disobedience1
         '
+        Me.Button_Disobedience1.BackColor = System.Drawing.Color.DarkCyan
         Me.Button_Disobedience1.Enabled = False
-        Me.Button_Disobedience1.Location = New System.Drawing.Point(244, 215)
+        Me.Button_Disobedience1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_Disobedience1.Font = New System.Drawing.Font("Century Gothic", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Button_Disobedience1.ForeColor = System.Drawing.Color.White
+        Me.Button_Disobedience1.Location = New System.Drawing.Point(182, 181)
         Me.Button_Disobedience1.Name = "Button_Disobedience1"
-        Me.Button_Disobedience1.Size = New System.Drawing.Size(108, 106)
+        Me.Button_Disobedience1.Size = New System.Drawing.Size(140, 120)
         Me.Button_Disobedience1.TabIndex = 17
         Me.Button_Disobedience1.Text = "Pierwsze nieposłuszeństwo"
-        Me.Button_Disobedience1.UseVisualStyleBackColor = True
+        Me.Button_Disobedience1.UseVisualStyleBackColor = False
         '
         'Button_DisobedienceDis1
         '
+        Me.Button_DisobedienceDis1.BackColor = System.Drawing.Color.DarkGoldenrod
         Me.Button_DisobedienceDis1.Enabled = False
-        Me.Button_DisobedienceDis1.Location = New System.Drawing.Point(244, 321)
+        Me.Button_DisobedienceDis1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_DisobedienceDis1.Font = New System.Drawing.Font("Century Gothic", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Button_DisobedienceDis1.ForeColor = System.Drawing.Color.White
+        Me.Button_DisobedienceDis1.Location = New System.Drawing.Point(182, 307)
         Me.Button_DisobedienceDis1.Name = "Button_DisobedienceDis1"
-        Me.Button_DisobedienceDis1.Size = New System.Drawing.Size(108, 106)
+        Me.Button_DisobedienceDis1.Size = New System.Drawing.Size(140, 120)
         Me.Button_DisobedienceDis1.TabIndex = 18
         Me.Button_DisobedienceDis1.Text = "Pierwsze nieposłuszeństwo z rozbudową przeskody"
-        Me.Button_DisobedienceDis1.UseVisualStyleBackColor = True
+        Me.Button_DisobedienceDis1.UseVisualStyleBackColor = False
         '
         'Button_Disobedience2
         '
+        Me.Button_Disobedience2.BackColor = System.Drawing.Color.MediumBlue
         Me.Button_Disobedience2.Enabled = False
-        Me.Button_Disobedience2.Location = New System.Drawing.Point(352, 215)
+        Me.Button_Disobedience2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_Disobedience2.Font = New System.Drawing.Font("Century Gothic", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Button_Disobedience2.ForeColor = System.Drawing.Color.White
+        Me.Button_Disobedience2.Location = New System.Drawing.Point(328, 181)
         Me.Button_Disobedience2.Name = "Button_Disobedience2"
-        Me.Button_Disobedience2.Size = New System.Drawing.Size(108, 106)
+        Me.Button_Disobedience2.Size = New System.Drawing.Size(140, 120)
         Me.Button_Disobedience2.TabIndex = 19
         Me.Button_Disobedience2.Text = "Drugie nieposłuszeństwo"
-        Me.Button_Disobedience2.UseVisualStyleBackColor = True
+        Me.Button_Disobedience2.UseVisualStyleBackColor = False
         '
         'Button_DisobedienceDis2
         '
+        Me.Button_DisobedienceDis2.BackColor = System.Drawing.Color.DarkKhaki
         Me.Button_DisobedienceDis2.Enabled = False
-        Me.Button_DisobedienceDis2.Location = New System.Drawing.Point(352, 321)
+        Me.Button_DisobedienceDis2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_DisobedienceDis2.Font = New System.Drawing.Font("Century Gothic", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Button_DisobedienceDis2.ForeColor = System.Drawing.Color.White
+        Me.Button_DisobedienceDis2.Location = New System.Drawing.Point(328, 307)
         Me.Button_DisobedienceDis2.Name = "Button_DisobedienceDis2"
-        Me.Button_DisobedienceDis2.Size = New System.Drawing.Size(108, 106)
+        Me.Button_DisobedienceDis2.Size = New System.Drawing.Size(140, 120)
         Me.Button_DisobedienceDis2.TabIndex = 20
         Me.Button_DisobedienceDis2.Text = "Drugie nieposłuszeństwo z rozbudową przeskody"
-        Me.Button_DisobedienceDis2.UseVisualStyleBackColor = True
+        Me.Button_DisobedienceDis2.UseVisualStyleBackColor = False
         '
         'Button_Disobedience3
         '
+        Me.Button_Disobedience3.BackColor = System.Drawing.Color.CadetBlue
         Me.Button_Disobedience3.Enabled = False
-        Me.Button_Disobedience3.Location = New System.Drawing.Point(461, 215)
+        Me.Button_Disobedience3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_Disobedience3.Font = New System.Drawing.Font("Century Gothic", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Button_Disobedience3.ForeColor = System.Drawing.Color.White
+        Me.Button_Disobedience3.Location = New System.Drawing.Point(474, 181)
         Me.Button_Disobedience3.Name = "Button_Disobedience3"
-        Me.Button_Disobedience3.Size = New System.Drawing.Size(108, 106)
+        Me.Button_Disobedience3.Size = New System.Drawing.Size(140, 120)
         Me.Button_Disobedience3.TabIndex = 21
         Me.Button_Disobedience3.Text = "Trzecie nieposłuszeństwo"
-        Me.Button_Disobedience3.UseVisualStyleBackColor = True
+        Me.Button_Disobedience3.UseVisualStyleBackColor = False
         '
         'Button_Fall
         '
+        Me.Button_Fall.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Button_Fall.Enabled = False
-        Me.Button_Fall.Location = New System.Drawing.Point(461, 321)
+        Me.Button_Fall.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_Fall.Font = New System.Drawing.Font("Century Gothic", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Button_Fall.ForeColor = System.Drawing.Color.White
+        Me.Button_Fall.Location = New System.Drawing.Point(474, 307)
         Me.Button_Fall.Name = "Button_Fall"
-        Me.Button_Fall.Size = New System.Drawing.Size(108, 106)
+        Me.Button_Fall.Size = New System.Drawing.Size(140, 120)
         Me.Button_Fall.TabIndex = 22
         Me.Button_Fall.Text = "Upadek"
-        Me.Button_Fall.UseVisualStyleBackColor = True
+        Me.Button_Fall.UseVisualStyleBackColor = False
         '
         'SerialPort1
         '
@@ -302,58 +346,68 @@ Partial Class TournamentView
         '
         'Button_Start
         '
+        Me.Button_Start.BackColor = System.Drawing.Color.Green
         Me.Button_Start.Enabled = False
-        Me.Button_Start.Location = New System.Drawing.Point(294, 485)
+        Me.Button_Start.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_Start.ForeColor = System.Drawing.Color.White
+        Me.Button_Start.Location = New System.Drawing.Point(269, 485)
         Me.Button_Start.Name = "Button_Start"
         Me.Button_Start.Size = New System.Drawing.Size(129, 41)
         Me.Button_Start.TabIndex = 23
         Me.Button_Start.Text = "Start"
-        Me.Button_Start.UseVisualStyleBackColor = True
+        Me.Button_Start.UseVisualStyleBackColor = False
         '
         'Button_Next
         '
+        Me.Button_Next.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Button_Next.Enabled = False
-        Me.Button_Next.Location = New System.Drawing.Point(488, 485)
+        Me.Button_Next.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_Next.ForeColor = System.Drawing.Color.White
+        Me.Button_Next.Location = New System.Drawing.Point(474, 485)
         Me.Button_Next.Name = "Button_Next"
-        Me.Button_Next.Size = New System.Drawing.Size(81, 41)
+        Me.Button_Next.Size = New System.Drawing.Size(129, 41)
         Me.Button_Next.TabIndex = 24
         Me.Button_Next.Text = "Następny"
-        Me.Button_Next.UseVisualStyleBackColor = True
+        Me.Button_Next.UseVisualStyleBackColor = False
         '
         'Button_RoundStart
         '
-        Me.Button_RoundStart.Location = New System.Drawing.Point(135, 485)
+        Me.Button_RoundStart.BackColor = System.Drawing.Color.Teal
+        Me.Button_RoundStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_RoundStart.ForeColor = System.Drawing.Color.White
+        Me.Button_RoundStart.Location = New System.Drawing.Point(79, 485)
         Me.Button_RoundStart.Name = "Button_RoundStart"
-        Me.Button_RoundStart.Size = New System.Drawing.Size(81, 41)
+        Me.Button_RoundStart.Size = New System.Drawing.Size(129, 41)
         Me.Button_RoundStart.TabIndex = 25
         Me.Button_RoundStart.Text = "Start Rundy"
-        Me.Button_RoundStart.UseVisualStyleBackColor = True
+        Me.Button_RoundStart.UseVisualStyleBackColor = False
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(513, 101)
+        Me.Label12.Location = New System.Drawing.Point(512, 97)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(40, 13)
+        Me.Label12.Size = New System.Drawing.Size(62, 21)
         Me.Label12.TabIndex = 26
         Me.Label12.Text = "Punkty"
         '
         'Label_Points
         '
         Me.Label_Points.AutoSize = True
-        Me.Label_Points.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label_Points.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Label_Points.Location = New System.Drawing.Point(524, 131)
         Me.Label_Points.Name = "Label_Points"
-        Me.Label_Points.Size = New System.Drawing.Size(18, 20)
+        Me.Label_Points.Size = New System.Drawing.Size(19, 21)
         Me.Label_Points.TabIndex = 27
         Me.Label_Points.Text = "0"
         '
         'Label_Horse
         '
         Me.Label_Horse.AutoSize = True
-        Me.Label_Horse.Location = New System.Drawing.Point(241, 97)
+        Me.Label_Horse.Font = New System.Drawing.Font("Monotype Corsiva", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label_Horse.Location = New System.Drawing.Point(228, 97)
         Me.Label_Horse.Name = "Label_Horse"
-        Me.Label_Horse.Size = New System.Drawing.Size(26, 13)
+        Me.Label_Horse.Size = New System.Drawing.Size(44, 25)
         Me.Label_Horse.TabIndex = 28
         Me.Label_Horse.Text = "Koń"
         '
@@ -369,50 +423,91 @@ Partial Class TournamentView
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Label1.Location = New System.Drawing.Point(404, 27)
+        Me.Label1.Font = New System.Drawing.Font("Monotype Corsiva", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(542, 12)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(119, 24)
+        Me.Label1.Size = New System.Drawing.Size(149, 33)
         Me.Label1.TabIndex = 30
         Me.Label1.Text = "Limit czasu:"
         '
         'Label_TimeLimit
         '
         Me.Label_TimeLimit.AutoSize = True
-        Me.Label_TimeLimit.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
-        Me.Label_TimeLimit.Location = New System.Drawing.Point(521, 27)
+        Me.Label_TimeLimit.Font = New System.Drawing.Font("Monotype Corsiva", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.Label_TimeLimit.ForeColor = System.Drawing.Color.White
+        Me.Label_TimeLimit.Location = New System.Drawing.Point(685, 12)
         Me.Label_TimeLimit.Name = "Label_TimeLimit"
-        Me.Label_TimeLimit.Size = New System.Drawing.Size(21, 24)
+        Me.Label_TimeLimit.Size = New System.Drawing.Size(28, 33)
         Me.Label_TimeLimit.TabIndex = 31
         Me.Label_TimeLimit.Text = "0"
         '
         'ListBox_Fault
         '
+        Me.ListBox_Fault.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ListBox_Fault.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ListBox_Fault.FormattingEnabled = True
+        Me.ListBox_Fault.ItemHeight = 21
         Me.ListBox_Fault.Items.AddRange(New Object() {"Błędy:"})
         Me.ListBox_Fault.Location = New System.Drawing.Point(629, 150)
         Me.ListBox_Fault.Name = "ListBox_Fault"
-        Me.ListBox_Fault.Size = New System.Drawing.Size(222, 277)
+        Me.ListBox_Fault.Size = New System.Drawing.Size(222, 273)
         Me.ListBox_Fault.TabIndex = 32
         '
         'Button_FaultBack
         '
+        Me.Button_FaultBack.BackColor = System.Drawing.Color.Maroon
+        Me.Button_FaultBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button_FaultBack.ForeColor = System.Drawing.Color.White
         Me.Button_FaultBack.Location = New System.Drawing.Point(757, 114)
         Me.Button_FaultBack.Name = "Button_FaultBack"
         Me.Button_FaultBack.Size = New System.Drawing.Size(94, 30)
         Me.Button_FaultBack.TabIndex = 33
         Me.Button_FaultBack.Text = "Cofnij Błąd"
-        Me.Button_FaultBack.UseVisualStyleBackColor = True
+        Me.Button_FaultBack.UseVisualStyleBackColor = False
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Gray
+        Me.Panel1.Controls.Add(Me.ButtonX)
+        Me.Panel1.Controls.Add(Me.PictureBox2)
+        Me.Panel1.Controls.Add(Me.Label_Type)
+        Me.Panel1.Controls.Add(Me.Label_TimeLimit)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Location = New System.Drawing.Point(0, 12)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(884, 60)
+        Me.Panel1.TabIndex = 34
+        '
+        'ButtonX
+        '
+        Me.ButtonX.BackColor = System.Drawing.Color.Transparent
+        Me.ButtonX.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonX.Location = New System.Drawing.Point(837, 13)
+        Me.ButtonX.Name = "ButtonX"
+        Me.ButtonX.Size = New System.Drawing.Size(35, 35)
+        Me.ButtonX.TabIndex = 8
+        Me.ButtonX.Text = "X"
+        Me.ButtonX.UseVisualStyleBackColor = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(12, 0)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(117, 60)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 2
+        Me.PictureBox2.TabStop = False
         '
         'TournamentView
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(884, 611)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button_FaultBack)
         Me.Controls.Add(Me.ListBox_Fault)
-        Me.Controls.Add(Me.Label_TimeLimit)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label_HitTime)
         Me.Controls.Add(Me.Label_Horse)
         Me.Controls.Add(Me.Label_Points)
@@ -439,13 +534,18 @@ Partial Class TournamentView
         Me.Controls.Add(Me.Label_Second)
         Me.Controls.Add(Me.Label_Hundredth)
         Me.Controls.Add(Me.Label_Minute)
-        Me.Controls.Add(Me.Label_Type)
         Me.Controls.Add(Me.Label_Surname)
         Me.Controls.Add(Me.Label_Name)
         Me.Controls.Add(Me.Button1)
+        Me.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "TournamentView"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Project"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -488,4 +588,7 @@ Partial Class TournamentView
     Friend WithEvents Label_TimeLimit As Label
     Friend WithEvents ListBox_Fault As ListBox
     Friend WithEvents Button_FaultBack As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents ButtonX As Button
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

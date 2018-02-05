@@ -85,9 +85,10 @@ Public Class AddPlayerView
         End If
     End Sub
 
-    Private Sub Button_Exit_Click(sender As Object, e As EventArgs) Handles Button_Exit.Click
+    Private Sub Button_Exit_Click(sender As Object, e As EventArgs) Handles ButtonX.Click
         connection.Close()
         Me.Visible = False
+        StartingDataView.Enabled = True
         StartingDataView.Visible = True
     End Sub
 
@@ -105,6 +106,7 @@ Public Class AddPlayerView
         If Counter = False Then
             Label_Name.Text = row.Cells("NAME").Value.ToString
             Label_Surname.Text = row.Cells("SURNAME").Value.ToString
+            Label1.Text = "Konie"
             Counter = True
             PlayerID = row.Cells("ID").Value.ToString
             Try

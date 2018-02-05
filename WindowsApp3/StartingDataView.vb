@@ -51,7 +51,7 @@ Public Class StartingDataView
         Me.Visible = False
         StartView.Visible = True
         Times = {New Integer() {NumericUpDown_Debiut.Value, CheckBox_Debiut.Checked}, New Integer() {NumericUpDown_MiniLL.Value, CheckBox_MiniLL.Checked}, New Integer() {NumericUpDown_LL.Value, CheckBox_LL.Checked}, New Integer() {NumericUpDown_L.Value, CheckBox_L.Checked}, New Integer() {NumericUpDown_L1.Value, CheckBox_L1.Checked}}
-
+        Application.Exit()
     End Sub
 
     Private Sub Button_Add_Click(sender As Object, e As EventArgs) Handles Button_Add.Click
@@ -148,4 +148,5 @@ Public Class StartingDataView
     Private Sub CheckBox_Debiut_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox_Debiut.CheckedChanged
         Label7.Text = CheckBox_Debiut.Checked
     End Sub
+
 End Class

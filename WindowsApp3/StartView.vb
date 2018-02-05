@@ -49,9 +49,10 @@ Public Class StartView
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Me.Visible = False
-        ResultsView.Visible = True
-        ResultsView.Results()
+        'Me.Visible = False
+        'ResultsView.Visible = True
+        'ResultsView.Results()
+        System.Diagnostics.Process.Start("http://horsetournament.apphb.com/Home/Tournament")
     End Sub
 
     Private Sub Button_Continuation_Click(sender As Object, e As EventArgs) Handles Button_Continuation.Click
@@ -79,6 +80,6 @@ Public Class StartView
     End Sub
 
     Private Sub ButtonX_Click(sender As Object, e As EventArgs) Handles ButtonX.Click
-        Close()
+        Application.Exit()
     End Sub
 End Class

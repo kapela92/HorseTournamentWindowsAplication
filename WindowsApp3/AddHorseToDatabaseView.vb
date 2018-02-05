@@ -34,4 +34,8 @@ Public Class AddHorseToDatabaseView
             connection.Dispose()
         End Try
     End Sub
+
+    Private Sub AddHorseToDatabaseView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

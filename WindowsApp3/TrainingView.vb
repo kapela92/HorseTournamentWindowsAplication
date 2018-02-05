@@ -34,6 +34,10 @@ Public Class TrainingView
         Label3.Text = hundredth
     End Sub
 
+    Private Sub ButtonX_Click(sender As Object, e As EventArgs) Handles ButtonX.Click
+        Application.Exit()
+    End Sub
+
     Private Sub TrainingView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         myPort = IO.Ports.SerialPort.GetPortNames()
         SerialPort1.PortName = ConfigurationView.ComboBox_Port.Text
