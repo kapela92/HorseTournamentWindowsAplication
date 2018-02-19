@@ -47,7 +47,6 @@ Partial Class StartingDataView
         Me.Button_Delete = New System.Windows.Forms.Button()
         Me.Label_Stud = New System.Windows.Forms.Label()
         Me.Button_Ok = New System.Windows.Forms.Button()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -329,15 +328,6 @@ Partial Class StartingDataView
         Me.Button_Ok.Text = "Dalej"
         Me.Button_Ok.UseVisualStyleBackColor = False
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(793, 461)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(50, 17)
-        Me.Label7.TabIndex = 25
-        Me.Label7.Text = "Label7"
-        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Gray
@@ -401,7 +391,6 @@ Partial Class StartingDataView
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Button_Ok)
         Me.Controls.Add(Me.Button_Delete)
         Me.Controls.Add(Me.Button_Add)
@@ -454,7 +443,6 @@ Partial Class StartingDataView
     Friend WithEvents Button_Delete As Button
     Friend WithEvents Label_Stud As Label
     Friend WithEvents Button_Ok As Button
-    Friend WithEvents Label7 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel2 As Panel

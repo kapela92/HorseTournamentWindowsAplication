@@ -82,7 +82,7 @@ Partial Class AddPlayerView
         Me.Button_Approved.Enabled = False
         Me.Button_Approved.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_Approved.ForeColor = System.Drawing.Color.White
-        Me.Button_Approved.Location = New System.Drawing.Point(425, 427)
+        Me.Button_Approved.Location = New System.Drawing.Point(459, 430)
         Me.Button_Approved.Name = "Button_Approved"
         Me.Button_Approved.Size = New System.Drawing.Size(75, 25)
         Me.Button_Approved.TabIndex = 4
@@ -92,7 +92,7 @@ Partial Class AddPlayerView
         'Label_Name
         '
         Me.Label_Name.AutoSize = True
-        Me.Label_Name.Location = New System.Drawing.Point(43, 430)
+        Me.Label_Name.Location = New System.Drawing.Point(9, 430)
         Me.Label_Name.Name = "Label_Name"
         Me.Label_Name.Size = New System.Drawing.Size(24, 17)
         Me.Label_Name.TabIndex = 8
@@ -101,7 +101,7 @@ Partial Class AddPlayerView
         'Label_Surname
         '
         Me.Label_Surname.AutoSize = True
-        Me.Label_Surname.Location = New System.Drawing.Point(105, 430)
+        Me.Label_Surname.Location = New System.Drawing.Point(114, 430)
         Me.Label_Surname.Name = "Label_Surname"
         Me.Label_Surname.Size = New System.Drawing.Size(24, 17)
         Me.Label_Surname.TabIndex = 9
@@ -111,7 +111,7 @@ Partial Class AddPlayerView
         '
         Me.ComboBox_Type1.FormattingEnabled = True
         Me.ComboBox_Type1.Items.AddRange(New Object() {"Debiut", "MiniLL", "LL", "L", "L1"})
-        Me.ComboBox_Type1.Location = New System.Drawing.Point(248, 427)
+        Me.ComboBox_Type1.Location = New System.Drawing.Point(294, 427)
         Me.ComboBox_Type1.Name = "ComboBox_Type1"
         Me.ComboBox_Type1.Size = New System.Drawing.Size(75, 25)
         Me.ComboBox_Type1.TabIndex = 11
@@ -121,7 +121,7 @@ Partial Class AddPlayerView
         '
         Me.ComboBox_Type2.FormattingEnabled = True
         Me.ComboBox_Type2.Items.AddRange(New Object() {"Debiut", "MiniLL", "LL", "L", "L1"})
-        Me.ComboBox_Type2.Location = New System.Drawing.Point(329, 427)
+        Me.ComboBox_Type2.Location = New System.Drawing.Point(375, 427)
         Me.ComboBox_Type2.Name = "ComboBox_Type2"
         Me.ComboBox_Type2.Size = New System.Drawing.Size(75, 25)
         Me.ComboBox_Type2.TabIndex = 12
@@ -142,7 +142,7 @@ Partial Class AddPlayerView
         'Label_Horse
         '
         Me.Label_Horse.AutoSize = True
-        Me.Label_Horse.Location = New System.Drawing.Point(177, 430)
+        Me.Label_Horse.Location = New System.Drawing.Point(222, 430)
         Me.Label_Horse.Name = "Label_Horse"
         Me.Label_Horse.Size = New System.Drawing.Size(24, 17)
         Me.Label_Horse.TabIndex = 14

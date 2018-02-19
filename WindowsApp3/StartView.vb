@@ -10,12 +10,14 @@ Public Class StartView
         Dim SDA As New MySqlDataAdapter
         connection.ConnectionString = "server=kapela92.cba.pl; userid=HorseTournament; Password=Yamahar1; database=kapela92 "
         Try
+            dbDataSet.Reset()
             connection.Open()
             Dim Query As String
             Query = "select * from Temporary"
             command = New MySqlCommand(Query, connection)
             SDA.SelectCommand = command
             SDA.Fill(dbDataSet)
+            connection.Close()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error")
         Finally
@@ -28,8 +30,35 @@ Public Class StartView
     End Sub
 
     Private Sub ButtonNewTournament_Click(sender As Object, e As EventArgs) Handles ButtonNewTournament.Click
-        StartingDataView.Visible = True
+        StartingDataView.Label_Name.Text = Interaction.InputBox("Podaj nazwę zawodów", "Nazwa zawodów", "", -1, -1)
+        StartingDataView.Label_Stud.Text = Interaction.InputBox("Podaj nazwę stajni", "Stajnia", "", -1, -1)
+        Try
+            Dim Query As String
+            connection.Open()
+            Query = "TRUNCATE TABLE StartList"
+            command = New MySqlCommand(Query, connection)
+            READ = command.ExecuteReader
+            connection.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error")
+        Finally
+            connection.Dispose()
+        End Try
+        Try
+            Dim Query As String
+            connection.Open()
+            Query = "TRUNCATE TABLE Temporary"
+            command = New MySqlCommand(Query, connection)
+            READ = command.ExecuteReader
+            connection.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error")
+        Finally
+            connection.Dispose()
+        End Try
         Me.Visible = False
+        StartingDataView.Visible = True
+        StartingDataView.Enabled = True
 
     End Sub
 
@@ -44,7 +73,7 @@ Public Class StartView
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        TournamentView.Visible = True
+        ConnectionTestView.Visible = True
         Me.Visible = False
     End Sub
 
@@ -59,12 +88,14 @@ Public Class StartView
         Dim Row As Integer = 0
         connection.ConnectionString = "server=kapela92.cba.pl; userid=HorseTournament; Password=Yamahar1; database=kapela92 "
         Try
+            dbDataSet.Reset()
             connection.Open()
             Dim Query As String
             Query = "select * from StartList"
             command = New MySqlCommand(Query, connection)
             SDA.SelectCommand = command
             SDA.Fill(dbDataSet)
+            connection.Close()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error")
         Finally
@@ -74,8 +105,46 @@ Public Class StartView
             While (dbDataSet.Rows(Row)(4).ToString <> "00:00:00")
                 Row = Row + 1
             End While
-            TournamentView.Row = Row
-            TournamentView.Type_counter = 0
+            TournamentView.Type_counter = Array.IndexOf(TournamentView.Type, dbDataSet.Rows(Row)(3).ToString)
+
+            Try
+                dbDataSet.Reset()
+                connection.Open()
+                Dim Query As String
+                Query = "select * from TimeLimit " 'WHERE DATE='" & DateTime.Today.Date.ToString("yyyy-MM-dd") & "'"
+                command = New MySqlCommand(Query, connection)
+                SDA.SelectCommand = command
+                SDA.Fill(dbDataSet)
+                connection.Close()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error")
+            Finally
+                connection.Dispose()
+            End Try
+            StartingDataView.Times = {New Integer() {Convert.ToInt64(dbDataSet.Rows(0)(4).ToString), Convert.ToInt64(dbDataSet.Rows(0)(5).ToString)}, New Integer() {Convert.ToInt64(dbDataSet.Rows(0)(6)), Convert.ToInt64(dbDataSet.Rows(0)(7))}, New Integer() {Convert.ToInt64(dbDataSet.Rows(0)(8)), Convert.ToInt64(dbDataSet.Rows(0)(9))}, New Integer() {Convert.ToInt64(dbDataSet.Rows(0)(10)), Convert.ToInt64(dbDataSet.Rows(0)(11))}, New Integer() {Convert.ToInt64(dbDataSet.Rows(0)(12)), Convert.ToInt64(dbDataSet.Rows(0)(13))}}
+            Me.Visible = False
+            TournamentView.Visible = True
+
+        Else
+            Try
+                dbDataSet.Reset()
+                connection.Open()
+                Dim Query As String
+                Query = "select * from Temporary"
+                command = New MySqlCommand(Query, connection)
+                SDA.SelectCommand = command
+                SDA.Fill(dbDataSet)
+                connection.Close()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error")
+            Finally
+                connection.Dispose()
+            End Try
+            StartingDataView.Label_Name.Text = dbDataSet.Rows(0)(6).ToString
+            StartingDataView.Label_Stud.Text = dbDataSet.Rows(0)(5).ToString
+            Me.Visible = False
+            StartingDataView.Visible = True
+
         End If
     End Sub
 

@@ -8,7 +8,7 @@ Public Class StartingDataView
     Public Times()() As Integer
 
 
-    Private Sub StartingDataView_VisibleChanged(sender As Object, e As EventArgs) Handles MyBase.VisibleChanged
+    Public Sub StartingDataView_VisibleChanged() Handles MyBase.VisibleChanged
         connection.ConnectionString = "server=kapela92.cba.pl; userid=HorseTournament; Password=Yamahar1; database=kapela92 "
         Dim SDA As New MySqlDataAdapter
         Dim dbDataSet As New DataTable
@@ -42,9 +42,7 @@ Public Class StartingDataView
     End Sub
 
     Private Sub StartingDataView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Label_Name.Text = Interaction.InputBox("Podaj nazwę zawodów", "Nazwa zawodów", "", -1, -1)
-        Label_Stud.Text = Interaction.InputBox("Podaj nazwę stajni", "Stajnia", "", -1, -1)
-        Label7.Text = CheckBox_Debiut.Checked
+
     End Sub
 
     Private Sub Button_Exit_Click(sender As Object, e As EventArgs) Handles Button_Exit.Click
@@ -55,8 +53,11 @@ Public Class StartingDataView
     End Sub
 
     Private Sub Button_Add_Click(sender As Object, e As EventArgs) Handles Button_Add.Click
+        Me.Enabled = False
         AddPlayerView.Visible = True
-        Me.Visible = False
+        AddPlayerView.Enabled = True
+        AddPlayerView.Activate()
+
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick, DataGridView1.CellClick
@@ -120,17 +121,17 @@ Public Class StartingDataView
                     If dbDataSet.Rows.Count > 0 Then
                         For b As Integer = 1 To counter
                             Dim Rand As Integer = New Random().Next(1, dbDataSet.Rows.Count) - 1
-                            Query = "INSERT INTO `StartList` (`HorseID`, `PlayerID`, `Type`, `Time`, `Points`,'Hundredth') VALUES ('" & dbDataSet.Rows(Rand)(2).ToString & "','" & dbDataSet.Rows(Rand)(1).ToString & "','" & Type(i) & "','00:00:00','0','0')"
+                            Query = "INSERT INTO `StartList` (`HorseID`, `PlayerID`, `Type`, `Time`, `Points`,Hundredth) VALUES ('" & dbDataSet.Rows(Rand)(2).ToString & "','" & dbDataSet.Rows(Rand)(1).ToString & "','" & Type(i) & "','00:00:00','0','0')"
                             command = New MySqlCommand(Query, connection)
                             READ = command.ExecuteReader
-                            dbDataSet.Rows(Rand).Delete()
+                            dbDataSet.Rows.Remove(dbDataSet.Rows(Rand))
                             READ.Close()
                         Next
                     End If
-                    dbDataSet.Clear()
+                    dbDataSet.Reset()
                 Next
             Next
-            Query = "INSERT INTO `TimeLimit` (`NAME`, `PLEACE`, `DATE`, `DEBIUT`, `MINILL`,'LL','L','L1') VALUES ('" & Label_Name.Text & "','" & Label_Stud.Text & "','" & DateAndTime.Today & "','" & NumericUpDown_Debiut.Value & "','" & NumericUpDown_MiniLL.Value & "','" & NumericUpDown_LL.Value & "','" & NumericUpDown_L.Value & "','" & NumericUpDown_L1.Value & "')"
+            Query = "INSERT INTO `TimeLimit` (`NAME`, `PLEACE`, `DATE`, `DEBIUT`,DEBIUT_HIT, `MINILL`,MINILL_HIT,LL,LL_HIT,L,L_HIT,L1,L1_HIT) VALUES ('" & Label_Name.Text & "','" & Label_Stud.Text & "','" & DateAndTime.Today & "','" & NumericUpDown_Debiut.Value & "','" & CheckBox_Debiut.Text & "','" & NumericUpDown_MiniLL.Value & "','" & CheckBox_MiniLL.Text & "','" & NumericUpDown_LL.Value & "','" & CheckBox_LL.Text & "','" & NumericUpDown_L.Value & "','" & CheckBox_L.Text & "','" & NumericUpDown_L1.Value & "','" & CheckBox_L1.Text & "')"
             command = New MySqlCommand(Query, connection)
             READ = command.ExecuteReader
             READ.Close()
@@ -143,10 +144,6 @@ Public Class StartingDataView
         Me.Visible = False
         TournamentView.Visible = True
         connection.Close()
-    End Sub
-
-    Private Sub CheckBox_Debiut_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox_Debiut.CheckedChanged
-        Label7.Text = CheckBox_Debiut.Checked
     End Sub
 
 End Class

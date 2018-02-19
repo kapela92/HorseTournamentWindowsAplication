@@ -14,7 +14,7 @@ Public Class TournamentView
     Public Row As Integer = 0
     Dim Second_Counter As Integer = 0
     Dim Hundredth_Counter As Integer = 0
-    Dim minute, second, hundredth, counter As Int64
+    Dim minute, second, hundredth, counter, millisecond, millisecond_actualy As Int64
     Dim minute1, second1, hundredth1 As Int64
     Dim data As UInt16
     Dim Points_Description As String
@@ -28,6 +28,7 @@ Public Class TournamentView
         Label_Points.Text = points
         ListBox_Fault.Items.Add(ListBox_Fault.Items.Count & ". " & Button_Discard.Text)
         Points_Description = Points_Description & "1"
+        Button_FaultBack.Enabled = True
     End Sub
 
     Private Sub Button_Disobedience1_Click(sender As Object, e As EventArgs) Handles Button_Disobedience1.Click
@@ -39,8 +40,11 @@ Public Class TournamentView
         Label_Points.Text = points
         Button_Disobedience1.Enabled = False
         Button_Disobedience2.Enabled = True
+        Button_DisobedienceDis2.Enabled = True
+        Button_DisobedienceDis1.Enabled = False
         ListBox_Fault.Items.Add(ListBox_Fault.Items.Count & ". " & Button_Disobedience1.Text)
         Points_Description = Points_Description & "2"
+        Button_FaultBack.Enabled = True
     End Sub
 
     Private Sub Button_Disobedience2_Click(sender As Object, e As EventArgs) Handles Button_Disobedience2.Click
@@ -52,6 +56,7 @@ Public Class TournamentView
         Label_Points.Text = points
         Button_Disobedience2.Enabled = False
         Button_Disobedience3.Enabled = True
+        Button_DisobedienceDis2.Enabled = False
         ListBox_Fault.Items.Add(ListBox_Fault.Items.Count & ". " & Button_Disobedience2.Text)
         Points_Description = Points_Description & "3"
     End Sub
@@ -114,10 +119,13 @@ Public Class TournamentView
             End If
         End If
         Label_Points.Text = points
+        Button_Disobedience1.Enabled = False
+        Button_Disobedience2.Enabled = True
         Button_DisobedienceDis1.Enabled = False
         Button_DisobedienceDis2.Enabled = True
         ListBox_Fault.Items.Add(ListBox_Fault.Items.Count & ". " & Button_DisobedienceDis1.Text)
         Points_Description = Points_Description & "6"
+        Button_FaultBack.Enabled = True
     End Sub
 
     Private Sub Button_DisobedienceDis2_Click(sender As Object, e As EventArgs) Handles Button_DisobedienceDis2.Click
@@ -155,10 +163,15 @@ Public Class TournamentView
             End If
         End If
         Label_Points.Text = points
+        Button_Disobedience2.Enabled = False
         Button_DisobedienceDis2.Enabled = False
         Button_Disobedience3.Enabled = True
         ListBox_Fault.Items.Add(ListBox_Fault.Items.Count & ". " & Button_DisobedienceDis2.Text)
         Points_Description = Points_Description & "7"
+    End Sub
+
+    Private Sub ButtonX_Click(sender As Object, e As EventArgs) Handles ButtonX.Click
+        Application.Exit()
     End Sub
 
     Private Sub Button_Fall_Click(sender As Object, e As EventArgs) Handles Button_Fall.Click
@@ -178,7 +191,7 @@ Public Class TournamentView
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button_FaultBack.Click
-        ListBox_Fault.Items.Remove(ListBox_Fault.Items.Item(ListBox_Fault.Items.Count))
+        ListBox_Fault.Items.Remove(ListBox_Fault.Items.Item(ListBox_Fault.Items.Count - 1))
         If Points_Description.Last = "1" Then
             If StartingDataView.Times(Type_counter)(1) = -1 Then
                 points = points - 0.5
@@ -194,6 +207,8 @@ Public Class TournamentView
             End If
             Button_Disobedience1.Enabled = True
             Button_Disobedience2.Enabled = False
+            Button_DisobedienceDis1.Enabled = True
+            Button_DisobedienceDis2.Enabled = False
 
         ElseIf Points_Description.Last = "3" Then
             If StartingDataView.Times(Type_counter)(1) = -1 Then
@@ -203,6 +218,7 @@ Public Class TournamentView
             End If
             Button_Disobedience2.Enabled = True
             Button_Disobedience3.Enabled = False
+            Button_DisobedienceDis2.Enabled = True
 
         ElseIf Points_Description.Last = "5" Then
             points = points - 1
@@ -228,6 +244,10 @@ Public Class TournamentView
                     second1 = second1 - 6
                 End If
             End If
+            Button_Disobedience1.Enabled = True
+            Button_Disobedience2.Enabled = False
+            Button_DisobedienceDis1.Enabled = True
+            Button_DisobedienceDis2.Enabled = False
 
         ElseIf Points_Description.Last = "7" Then
             If StartingDataView.Times(Type_counter)(1) = -1 Then
@@ -249,34 +269,33 @@ Public Class TournamentView
                     second1 = second1 - 6
                 End If
             End If
-
+            Button_Disobedience2.Enabled = True
+            Button_Disobedience3.Enabled = False
+            Button_DisobedienceDis2.Enabled = True
         End If
         Label_Points.Text = points
-        Points_Description.Remove(ListBox_Fault.Items.Count - 1, 1)
+        Points_Description = Points_Description.Remove(ListBox_Fault.Items.Count - 1, 1)
+        If Points_Description = "" Then
+            Button_FaultBack.Enabled = False
+        End If
     End Sub
 
     Private Sub Button_RoundStart_Click(sender As Object, e As EventArgs) Handles Button_RoundStart.Click
         Fill_DataTable()
         Button_Start.Enabled = True
+        Label_Type.Text = dbDataSet.Rows(Row)(3).ToString
         Label_Name.Text = dbDataSet.Rows(Row)(4).ToString
         Label_Surname.Text = dbDataSet.Rows(Row)(5).ToString
         Label_Horse.Text = dbDataSet.Rows(Row)(6).ToString
-        Button_RoundStart.Enabled = False
-        Button_Disobedience1.Enabled = True
-        Button_DisobedienceDis1.Enabled = True
-        Button_Fall.Enabled = True
-        Button_Discard.Enabled = True
-        If StartingDataView.Times(Type_counter)(1) = -1 Then
-            Button_Stop.Enabled = True
-        End If
     End Sub
 
     Private Sub Button_Next_Click(sender As Object, e As EventArgs) Handles Button_Next.Click
         Button_Next.Enabled = False
+        counter = 0
         Try
             Dim Query As String
             connection.Open()
-            Query = "ThenUPDATE StartList SET Time='" & minute & ":" & second & ":" & hundredth & "', Points='" & points & "', Hundredth='" & Hundredth_Counter & "','POINTS_DESCIPTION='" & Points_Description & "' WHERE ID='" & dbDataSet.Rows(Row)(0) & "'"
+            Query = "UPDATE StartList SET Time='" & minute & ":" & second & ":" & hundredth & "', Points='" & points & "', Hundredth='" & Hundredth_Counter & "',POINTS_DESCRIPTION='" & Points_Description & "' WHERE ID='" & dbDataSet.Rows(Row)(0) & "'"
             command = New MySqlCommand(Query, connection)
             READ = command.ExecuteReader
             connection.Close()
@@ -285,7 +304,10 @@ Public Class TournamentView
         Finally
             connection.Dispose()
         End Try
+        Points_Description = ""
         SerialPort1.Close()
+        ListBox_Fault.Items.Clear()
+        ListBox_Fault.Items.Add("Błędy:")
         Row = Row + 1
         If Row = dbDataSet.Rows.Count Then
             Row = 0
@@ -297,9 +319,10 @@ Public Class TournamentView
             hundredth1 = 0
             second1 = 0
             Type_counter = Type_counter + 1
-            If Type_counter = 5 Then
+            If Type_counter > 4 Then
                 Me.Visible = False
                 ResultsView.Visible = True
+                ResultsView.Results()
             Else
                 MessageBox.Show("Koniec rundy:" & Type(Type_counter - 1))
                 Button_RoundStart.Enabled = True
@@ -316,19 +339,13 @@ Public Class TournamentView
                 Label_HitTime.Text = ""
                 Label_TimeLimit.Text = ""
                 Label_Type.Text = Type(Type_counter)
-                Button_Disobedience1.Enabled = False
-                Button_Disobedience2.Enabled = False
-                Button_Disobedience3.Enabled = False
-                Button_DisobedienceDis1.Enabled = False
-                Button_DisobedienceDis2.Enabled = False
-                Button_Fall.Enabled = False
-                Button_Discard.Enabled = False
-                Button_Stop.Enabled = False
+
                 If StartingDataView.Times(Type_counter)(1) = -1 Then
                     Label_HitTime.Text = "z trafieniem w normę czasu"
                 End If
                 Label_TimeLimit.Text = StartingDataView.Times(Type_counter)(0)
-                dbDataSet.Clear()
+                dbDataSet.Reset()
+                Fill_DataTable()
             End If
         Else
             points = 0
@@ -352,6 +369,15 @@ Public Class TournamentView
             Label_TimeLimit.Text = ""
             Button_Start.Enabled = True
         End If
+        Button_Disobedience1.Enabled = False
+        Button_Disobedience2.Enabled = False
+        Button_Disobedience3.Enabled = False
+        Button_DisobedienceDis1.Enabled = False
+        Button_DisobedienceDis2.Enabled = False
+        Button_Fall.Enabled = False
+        Button_Discard.Enabled = False
+        Button_Stop.Enabled = False
+        Button_FaultBack.Enabled = False
     End Sub
 
     Private Sub Button_Start_Click(sender As Object, e As EventArgs) Handles Button_Start.Click
@@ -363,28 +389,37 @@ Public Class TournamentView
             End Try
             Button_Start.Enabled = False
         Else
-
+            counter = 0
+        End If
+        Button_RoundStart.Enabled = False
+        Button_Disobedience1.Enabled = True
+        Button_DisobedienceDis1.Enabled = True
+        Button_Fall.Enabled = True
+        Button_Discard.Enabled = True
+        If StartingDataView.Times(Type_counter)(1) = -1 Then
+            Button_Stop.Enabled = True
         End If
     End Sub
 
     Private Sub TournamentView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         connection.ConnectionString = "server=kapela92.cba.pl; userid=HorseTournament; Password=Yamahar1; database=kapela92 "
-        Label_Type.Text = Type(Type_counter)
+
         If StartingDataView.Times(Type_counter)(1) = -1 Then
             Label_HitTime.Text = "z trafieniem w normę czasu"
         End If
         Label_TimeLimit.Text = StartingDataView.Times(Type_counter)(0)
         SerialPort1.PortName = ConfigurationView.ComboBox_Port.Text
         SerialPort1.BaudRate = "9600"
-
+        Button_FaultBack.Enabled = False
     End Sub
 
     Private Sub Fill_DataTable()
         If Type_counter <= 4 Then
             Try
+                dbDataSet.Reset()
                 connection.Open()
                 Dim Query As String
-                Query = "select S.ID,S.HORSEID,S.PLAYERID,S.TYPE,P.NAME,P.SURNAME,H.NAME from StartList S, Players P, Horses H where S.HORSEID=H.ID AND S.PLAYERID=P.ID AND S.TYPE='" & Type(Type_counter) & "' ORDER BY S.ID"
+                Query = "select S.ID,S.HORSEID,S.PLAYERID,S.TYPE,P.NAME,P.SURNAME,H.NAME,S.TIME from StartList S, Players P, Horses H where S.HORSEID=H.ID AND S.PLAYERID=P.ID AND S.TYPE='" & Type(Type_counter) & "' ORDER BY S.ID"
                 command = New MySqlCommand(Query, connection)
                 SDA.SelectCommand = command
                 SDA.Fill(dbDataSet)
@@ -394,10 +429,23 @@ Public Class TournamentView
             Finally
                 connection.Dispose()
             End Try
+
         Else
-            MessageBox.Show("Koniec Typów", "Fell_DataTable")
+            Me.Visible = False
+            ResultsView.Visible = True
+            ResultsView.Results()
         End If
-    End Sub
+        If dbDataSet.Rows.Count = 0 Then
+            If Type_counter <= 4 Then
+                Type_counter = Type_counter + 1
+                Fill_DataTable()
+            End If
+        Else
+            While (dbDataSet.Rows(Row)(7).ToString <> "00:00:00")
+                Row = Row + 1
+            End While
+        End If
+            End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
@@ -408,34 +456,51 @@ Public Class TournamentView
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        hundredth = hundredth + 1
-        Hundredth_Counter = Hundredth_Counter + 1
-        If hundredth = 100 Then
-            second = second + 1
-            Second_Counter = Second_Counter + 1
-            hundredth = 0
-            If second = 60 Then
-                second = 0
-                minute = minute + 1
+        'hundredth = hundredth + 1
+        'Hundredth_Counter = Hundredth_Counter + 1
+        'If hundredth = 100 Then
+        '    second = second + 1
+        '    Second_Counter = Second_Counter + 1
+        '    hundredth = 0
+        '    If second = 60 Then
+        '        second = 0
+        '        minute = minute + 1
+        '    End If
+        'End If
+        If DateTime.Now.Millisecond >= millisecond Then
+            millisecond_actualy = DateTime.Now.Millisecond - millisecond
+        Else
+            millisecond_actualy = DateTime.Now.Millisecond + (1000 - millisecond)
+        End If
+        If Fix(millisecond_actualy / 10) <> hundredth Then
+            hundredth = Fix(millisecond_actualy / 10)
+            If hundredth = 0 Then
+                second = second + 1
+                Second_Counter = Second_Counter + 1
+                If second = 60 Then
+                    second = 0
+                    minute = minute + 1
+                End If
             End If
         End If
         If Second_Counter >= StartingDataView.Times(Type_counter)(0) Then
-            hundredth1 = hundredth1 + 1
-            If hundredth1 = 100 Then
-                second1 = second1 + 1
-                If StartingDataView.Times(Type_counter)(0) = 0 Then
-                    points = points + 0.1
+            If Fix(millisecond_actualy / 10) <> hundredth1 Then
+                hundredth1 = Fix(millisecond_actualy / 10)
+                If hundredth1 = 0 Then
+                    second1 = second1 + 1
+                    If StartingDataView.Times(Type_counter)(0) = 0 Then
+                        points = points + 0.1
+                    End If
+                    Label_Points.Text = points
+                    If second1 = 60 Then
+                        second1 = 0
+                        minute1 = minute1 + 1
+                    End If
                 End If
-                Label_Points.Text = points
-                hundredth1 = 0
-                If second1 = 60 Then
-                    second1 = 0
-                    minute1 = minute1 + 1
-                End If
+                Label_MinuteLimit.Text = minute1
+                Label_SecondLimit.Text = second1
+                Label_HundredthLimit.Text = hundredth1
             End If
-            Label_MinuteLimit.Text = minute1
-            Label_SecondLimit.Text = second1
-            Label_HundredthLimit.Text = hundredth1
         End If
         Label_Minute.Text = minute
         Label_Second.Text = second
@@ -447,21 +512,29 @@ Public Class TournamentView
     End Sub
 
     Private Sub Dispalydata_event(sender As Object, e As EventArgs)
-        Try
-            data = SerialPort1.ReadByte()
-            If data = 49 Then
-                Timer1.Start()
-            ElseIf data = 48 Then
-                Timer1.Stop()
-                Timer2.Stop()
-                Second_Counter = 0
-                Button_Next.Enabled = True
+        ''Try
+        ''    data = SerialPort1.ReadByte()
+        ''    If data = 49 Then
+        ''        Timer1.Start()
+        ''    ElseIf data = 48 Then
+        ''        Timer1.Stop()
+        ''        Timer2.Stop()
+        ''        Second_Counter = 0
+        ''        Button_Next.Enabled = True
 
-            End If
+        ''    End If
 
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "Error")
-        End Try
+        ''Catch ex As Exception
+        ''    MessageBox.Show(ex.Message, "Error")
+        ''End 
+        If counter = 0 Then
+            Timer1.Enabled = True
+            millisecond = DateTime.Now.Millisecond
+            counter = 1
+        ElseIf counter = 1 Then
+            Timer1.Enabled = False
+            Button_Next.Enabled = True
+        End If
 
     End Sub
 

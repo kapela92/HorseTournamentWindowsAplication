@@ -45,6 +45,7 @@ Partial Class StartView
         'ButtonNewTournament
         '
         Me.ButtonNewTournament.BackColor = System.Drawing.Color.SeaGreen
+        Me.ButtonNewTournament.Enabled = False
         Me.ButtonNewTournament.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonNewTournament.ForeColor = System.Drawing.Color.White
         Me.ButtonNewTournament.Location = New System.Drawing.Point(450, 190)

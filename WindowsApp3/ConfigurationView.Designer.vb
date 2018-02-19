@@ -63,14 +63,16 @@ Partial Class ConfigurationView
         'Label_Check
         '
         Me.Label_Check.AutoSize = True
-        Me.Label_Check.Location = New System.Drawing.Point(313, 112)
+        Me.Label_Check.Location = New System.Drawing.Point(419, 249)
         Me.Label_Check.Name = "Label_Check"
-        Me.Label_Check.Size = New System.Drawing.Size(0, 21)
+        Me.Label_Check.Size = New System.Drawing.Size(36, 21)
         Me.Label_Check.TabIndex = 3
+        Me.Label_Check.Text = "NO"
         '
         'Button_Ok
         '
         Me.Button_Ok.BackColor = System.Drawing.Color.Olive
+        Me.Button_Ok.Enabled = False
         Me.Button_Ok.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button_Ok.Location = New System.Drawing.Point(465, 301)
         Me.Button_Ok.Name = "Button_Ok"

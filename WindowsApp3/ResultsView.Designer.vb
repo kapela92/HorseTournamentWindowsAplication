@@ -113,6 +113,7 @@ Partial Class ResultsView
         Me.ListBox_Debiuts.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.ListBox_Debiuts.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ListBox_Debiuts.FormattingEnabled = True
+        Me.ListBox_Debiuts.HorizontalScrollbar = True
         Me.ListBox_Debiuts.ItemHeight = 17
         Me.ListBox_Debiuts.Location = New System.Drawing.Point(12, 111)
         Me.ListBox_Debiuts.Name = "ListBox_Debiuts"
@@ -124,6 +125,7 @@ Partial Class ResultsView
         Me.ListBox_MiniLL.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.ListBox_MiniLL.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ListBox_MiniLL.FormattingEnabled = True
+        Me.ListBox_MiniLL.HorizontalScrollbar = True
         Me.ListBox_MiniLL.ItemHeight = 17
         Me.ListBox_MiniLL.Location = New System.Drawing.Point(180, 111)
         Me.ListBox_MiniLL.Name = "ListBox_MiniLL"
@@ -135,6 +137,7 @@ Partial Class ResultsView
         Me.ListBox_LL.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.ListBox_LL.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ListBox_LL.FormattingEnabled = True
+        Me.ListBox_LL.HorizontalScrollbar = True
         Me.ListBox_LL.ItemHeight = 17
         Me.ListBox_LL.Location = New System.Drawing.Point(370, 111)
         Me.ListBox_LL.Name = "ListBox_LL"
@@ -146,6 +149,7 @@ Partial Class ResultsView
         Me.ListBox_L.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.ListBox_L.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ListBox_L.FormattingEnabled = True
+        Me.ListBox_L.HorizontalScrollbar = True
         Me.ListBox_L.ItemHeight = 17
         Me.ListBox_L.Location = New System.Drawing.Point(538, 111)
         Me.ListBox_L.Name = "ListBox_L"
@@ -157,6 +161,7 @@ Partial Class ResultsView
         Me.ListBox_L1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.ListBox_L1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ListBox_L1.FormattingEnabled = True
+        Me.ListBox_L1.HorizontalScrollbar = True
         Me.ListBox_L1.ItemHeight = 17
         Me.ListBox_L1.Location = New System.Drawing.Point(719, 111)
         Me.ListBox_L1.Name = "ListBox_L1"

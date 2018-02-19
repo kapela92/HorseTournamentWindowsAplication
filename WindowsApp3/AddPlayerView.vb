@@ -130,6 +130,7 @@ Public Class AddPlayerView
             Label_Horse.Text = row.Cells("NAME").Value.ToString
             HorseID = row.Cells("ID").Value.ToString
             Button_Approved.Enabled = True
+
         End If
     End Sub
 
@@ -200,9 +201,10 @@ Public Class AddPlayerView
             Button_Back.Visible = False
             'row = Me.DataGridView1.Rows(0)
             connection.Close()
-            Me.Close()
-            StartingDataView.Visible = True
             Button_Approved.Enabled = False
+            StartingDataView.StartingDataView_VisibleChanged()
+            StartingDataView.Enabled = True
+            Me.Close()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error")
         Finally
