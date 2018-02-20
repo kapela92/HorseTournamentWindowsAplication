@@ -291,6 +291,7 @@ Public Class TournamentView
 
     Private Sub Button_Next_Click(sender As Object, e As EventArgs) Handles Button_Next.Click
         Button_Next.Enabled = False
+        SerialPort1.Close()
         counter = 0
         Try
             Dim Query As String
@@ -305,7 +306,7 @@ Public Class TournamentView
             connection.Dispose()
         End Try
         Points_Description = ""
-        SerialPort1.Close()
+
         ListBox_Fault.Items.Clear()
         ListBox_Fault.Items.Add("Błędy:")
         Row = Row + 1

@@ -111,7 +111,7 @@ Public Class StartView
                 dbDataSet.Reset()
                 connection.Open()
                 Dim Query As String
-                Query = "select * from TimeLimit " 'WHERE DATE='" & DateTime.Today.Date.ToString("yyyy-MM-dd") & "'"
+                Query = "select * from TimeLimit WHERE DATE='" & DateTime.Today.Date.ToString("yyyy-MM-dd") & "'"
                 command = New MySqlCommand(Query, connection)
                 SDA.SelectCommand = command
                 SDA.Fill(dbDataSet)
@@ -121,6 +121,8 @@ Public Class StartView
             Finally
                 connection.Dispose()
             End Try
+            StartingDataView.Label_Stud.Text = dbDataSet.Rows(0)(2).ToString
+            StartingDataView.Label_Name.Text = dbDataSet.Rows(0)(1).ToString
             StartingDataView.Times = {New Integer() {Convert.ToInt64(dbDataSet.Rows(0)(4).ToString), Convert.ToInt64(dbDataSet.Rows(0)(5).ToString)}, New Integer() {Convert.ToInt64(dbDataSet.Rows(0)(6)), Convert.ToInt64(dbDataSet.Rows(0)(7))}, New Integer() {Convert.ToInt64(dbDataSet.Rows(0)(8)), Convert.ToInt64(dbDataSet.Rows(0)(9))}, New Integer() {Convert.ToInt64(dbDataSet.Rows(0)(10)), Convert.ToInt64(dbDataSet.Rows(0)(11))}, New Integer() {Convert.ToInt64(dbDataSet.Rows(0)(12)), Convert.ToInt64(dbDataSet.Rows(0)(13))}}
             Me.Visible = False
             TournamentView.Visible = True

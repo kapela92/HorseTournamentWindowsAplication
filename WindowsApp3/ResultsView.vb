@@ -53,11 +53,14 @@ Public Class ResultsView
                 End Try
             End If
             For a As Integer = 0 To dbDataSet.Rows.Count - 1
-                For b As Integer = 0 To a
-                    If dbDataSet.Rows(a)(2) = dbDataSet.Rows(b)(2) And dbDataSet.Rows(a)(1) = dbDataSet.Rows(b)(1) Then
-                        a = a + 1
-                    End If
-                Next
+                If a > 0 And a < dbDataSet.Rows.Count - 1 Then
+                    For b As Integer = 0 To a - 1
+                        If dbDataSet.Rows(a)(2) = dbDataSet.Rows(b)(2) And dbDataSet.Rows(a)(1) = dbDataSet.Rows(b)(1) Then
+                            a = a + 1
+                        End If
+                    Next
+                End If
+
                 Try
                     Dim Query As String
                     connection.Open()
@@ -133,4 +136,5 @@ Public Class ResultsView
     Private Sub ButtonX_Click(sender As Object, e As EventArgs) Handles ButtonX.Click
         Application.Exit()
     End Sub
+
 End Class

@@ -207,9 +207,9 @@ Partial Class ResultsView
         Me.Label7.ForeColor = System.Drawing.Color.White
         Me.Label7.Location = New System.Drawing.Point(146, 15)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(124, 28)
+        Me.Label7.Size = New System.Drawing.Size(77, 28)
         Me.Label7.TabIndex = 1
-        Me.Label7.Text = "Konfiguracja"
+        Me.Label7.Text = "Wyniki"
         '
         'ResultsView
         '
